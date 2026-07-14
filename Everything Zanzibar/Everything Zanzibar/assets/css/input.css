@@ -1,0 +1,59 @@
+/* ============================================================================
+   Everything Zanzibar — Tailwind source (compiled to /assets/css/app.min.css)
+   Build:  npm run build:css   (purges unused utilities + minifies)
+   Holds the Tailwind layers + the component classes used by the SSG pages.
+   ============================================================================ */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root { color-scheme: light; }
+  body { @apply font-sans text-ink bg-sand antialiased; }
+  h1, h2, h3 { @apply font-serif; }
+  img, picture { @apply block max-w-full; }
+}
+
+@layer components {
+  /* ---- layout ---- */
+  .hub        { @apply max-w-7xl mx-auto px-5 md:px-8 py-12 md:py-16; }
+  .hub-head h1{ @apply text-3xl md:text-5xl text-ocean; }
+  .lede       { @apply text-ink/70 mt-3 text-lg font-light max-w-2xl; }
+  .grid       { @apply grid gap-6 sm:grid-cols-2 lg:grid-cols-3 mt-8; }
+  .detail     { @apply max-w-3xl mx-auto px-5 md:px-8 py-12; }
+  .crumbs     { @apply text-sm text-ink/55 mb-4; }
+  .crumbs a   { @apply text-teal hover:underline; }
+
+  /* ---- cards ---- */
+  .card        { @apply bg-white rounded-3xl overflow-hidden shadow-lg shadow-ocean/10 border border-ocean/5 flex flex-col; }
+  .card-img    { @apply block w-full aspect-[3/2] overflow-hidden bg-ocean2; }
+  .card-img img, .card-img picture { @apply w-full h-full object-cover; }
+  .card-body   { @apply p-5 flex flex-col flex-1 gap-1; }
+  .card h3     { @apply text-lg leading-tight; }
+  .card h3 a   { @apply text-ocean hover:text-teal; }
+  .eyebrow     { @apply text-[11px] uppercase tracking-wide text-teal font-medium; }
+  .meta        { @apply text-sm text-ink/60; }
+  .price       { @apply font-serif text-lg text-ocean mt-1; }
+  .tags        { @apply flex flex-wrap gap-1.5 mt-2; }
+  .tags li     { @apply text-[11px] bg-teal/10 text-teal px-2.5 py-1 rounded-full; }
+
+  /* ---- buttons ---- */
+  .btn         { @apply mt-3 inline-flex justify-center items-center py-2.5 px-4 rounded-full bg-teal text-white text-sm font-medium hover:bg-tealb transition; }
+  .btn-ghost   { @apply mt-2 inline-flex justify-center items-center py-2 px-4 rounded-full border border-teal/40 text-teal text-sm hover:bg-teal hover:text-white transition; }
+  .btn-primary { @apply mt-5 inline-flex justify-center items-center py-3 px-6 rounded-full bg-ocean text-white font-medium hover:bg-ocean2 transition; }
+
+  /* ---- hub controls ---- */
+  .filters                  { @apply flex flex-wrap items-center gap-3 mt-6; }
+  .filters input[type=search]{ @apply px-4 py-2.5 rounded-full border border-ocean/15 outline-none focus:border-teal w-full sm:w-80; }
+  .pills                    { @apply flex flex-wrap gap-2; }
+  .pills button             { @apply text-sm px-4 py-1.5 rounded-full border border-ocean/15 text-ink/70 transition; }
+  .pills button.on          { @apply bg-teal text-white border-teal; }
+  .empty                    { @apply text-center text-ink/55 py-16; }
+
+  /* ---- detail ---- */
+  .detail .hero   { @apply w-full aspect-[16/9] object-cover rounded-2xl my-5; }
+  .features       { @apply grid sm:grid-cols-2 gap-2 my-4 list-none p-0; }
+  .features li    { @apply flex gap-2 text-ink/80; }
+  .pax            { @apply flex items-center gap-3 my-4; }
+  .pax button     { @apply w-10 h-10 rounded-full border border-ocean/15 text-xl leading-none; }
+}

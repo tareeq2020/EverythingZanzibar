@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Everything Zanzibar — The Founders</title>
+<meta name="description" content="Meet the people behind Everything Zanzibar — the local team turning the island into one seamless, premium experience, from insider guides to luxury yacht events." />
+<link rel="icon" type="image/png" href="1.jpg" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,400&family=Inter:wght@300;400;500;600&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<style>
+  :root{
+    --turquoise:#1E70B0;
+    --turquoise-bright:#2A86C9;
+    --marine:#0A2540;
+    --marine-2:#143A61;
+    --gold:#2FA8E0;
+    --gold-deep:#2790C4;
+    --sunset:#F2854A;
+    --sunset-bright:#FF9D5C;
+    --sand:#F3F8FC;
+    --sand-2:#E6F0F8;
+    --ink:#14304F;
+    --font-serif:'Fraunces', Georgia, serif;
+    --font-sans:'Inter', system-ui, sans-serif;
+    --ease:cubic-bezier(.16,1,.3,1);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:var(--font-sans);background:var(--marine);color:var(--sand);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+  body.menu-open{overflow:hidden;}
+  a{color:inherit;text-decoration:none;}
+  img{display:block;max-width:100%;}
+  ::selection{background:var(--gold);color:var(--marine);}
+  .wrap{width:min(1240px,92vw);margin-inline:auto;}
+  .eyebrow{font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;font-weight:500;color:var(--gold);display:inline-block;}
+  h1,h2,h3{font-family:var(--font-serif);font-weight:400;line-height:1.05;letter-spacing:-.01em;}
+
+  /* buttons */
+  .btn{display:inline-flex;align-items:center;gap:.5rem;font-size:.85rem;font-weight:500;letter-spacing:.02em;padding:.85rem 1.7rem;border-radius:50px;border:1px solid transparent;cursor:pointer;transition:all .35s var(--ease);background:none;color:inherit;}
+  .btn-gold{border-color:var(--gold);color:var(--gold);}
+  .btn-gold:hover{background:var(--gold);color:var(--marine);}
+  .btn-fill{background:var(--turquoise);color:#fff;}
+  .btn-fill:hover{background:var(--turquoise-bright);transform:translateY(-2px);box-shadow:0 10px 30px -10px rgba(42,134,201,.7);}
+  .btn-ghost{border-color:rgba(255,255,255,.4);color:#fff;}
+  .btn-ghost:hover{background:#fff;color:var(--marine);}
+
+  /* nav */
+  .nav{position:fixed;inset:0 0 auto 0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:1.2rem clamp(1.2rem,5vw,3rem);transition:padding .4s var(--ease),background .4s,backdrop-filter .4s,border-color .4s;border-bottom:1px solid transparent;}
+  .nav.scrolled{padding:.7rem clamp(1.2rem,5vw,3rem);background:rgba(8,28,50,.72);backdrop-filter:blur(14px);border-bottom:1px solid rgba(47,168,224,.18);}
+  .brand{font-family:'Open Sans',sans-serif;font-size:1.25rem;letter-spacing:.02em;display:flex;align-items:center;gap:.6rem;}
+  .brand b{font-weight:500;}
+  .brand-logo{width:78px;height:78px;border-radius:50%;background:#fff;padding:6px;object-fit:contain;box-shadow:0 3px 12px rgba(0,0,0,.22);flex:none;}
+  .nav-links{display:flex;align-items:center;gap:2rem;font-size:.9rem;}
+  .nav-links a{position:relative;opacity:.85;transition:opacity .3s;cursor:pointer;}
+  .nav-links a:not(.btn)::after{content:"";position:absolute;left:0;bottom:-6px;height:1px;width:0;background:var(--gold);transition:width .35s var(--ease);}
+  .nav-links a:hover{opacity:1;}
+  .nav-links a:not(.btn):hover::after,.nav-links a.active:not(.btn)::after{width:100%;}
+  .nav-links a.active{color:var(--gold);opacity:1;}
+  .burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:6px;z-index:210;}
+  .burger span{width:24px;height:2px;background:var(--sand);transition:.35s var(--ease);}
+  body.menu-open .burger span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  body.menu-open .burger span:nth-child(2){opacity:0;}
+  body.menu-open .burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+  /* hero */
+  .hero{position:relative;min-height:74vh;display:flex;align-items:flex-end;padding:0 clamp(1.2rem,5vw,3rem) clamp(3rem,7vh,5rem);
+    background:linear-gradient(180deg,rgba(10,37,64,.55) 0%,rgba(10,37,64,.4) 40%,rgba(10,37,64,.92) 100%),
+    url('https://commons.wikimedia.org/wiki/Special:FilePath/Zanzibar_stone_town_pano.jpg?width=2000') center/cover no-repeat;
+    background-color:var(--turquoise);}
+  .hero-inner{max-width:820px;}
+  .hero h1{font-size:clamp(2.6rem,7vw,5rem);margin:1rem 0 1.2rem;}
+  .hero h1 em{color:var(--gold);font-style:italic;font-weight:300;}
+  .hero p{font-size:clamp(1rem,1.6vw,1.25rem);max-width:560px;color:rgba(255,255,255,.88);font-weight:300;}
+
+  /* section */
+  .section{padding:clamp(4rem,9vh,7rem) 0;}
+  .sec-head{max-width:720px;margin-bottom:3rem;}
+  .sec-head h2{font-size:clamp(2rem,4.6vw,3.2rem);margin:1rem 0 1rem;}
+  .sec-head p{font-size:1.05rem;font-weight:300;opacity:.82;}
+
+  /* founders grid */
+  .founders{background:var(--marine-2);}
+  .f-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem;}
+  .f-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:20px;overflow:hidden;transition:transform .5s var(--ease),border-color .5s,box-shadow .5s;}
+  .f-card:hover{transform:translateY(-6px);border-color:var(--gold);box-shadow:0 24px 50px -24px rgba(0,0,0,.6);}
+  .f-photo{position:relative;aspect-ratio:4/5;background:linear-gradient(160deg,var(--turquoise),var(--marine));overflow:hidden;}
+  .f-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .9s var(--ease);}
+  .f-card:hover .f-photo img{transform:scale(1.06);}
+  .f-initials{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--font-serif);font-size:3.4rem;color:rgba(255,255,255,.55);}
+  .f-body{padding:1.5rem;}
+  .f-role{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:500;}
+  .f-name{font-size:1.5rem;color:#fff;margin:.5rem 0 .7rem;}
+  .f-bio{font-size:.92rem;font-weight:300;color:rgba(255,255,255,.8);}
+  .f-social{margin-top:1rem;display:flex;gap:1rem;font-size:.8rem;}
+  .f-social a{color:var(--gold);transition:color .3s;}
+  .f-social a:hover{color:var(--gold-deep);}
+  .f-note{font-size:.82rem;font-weight:300;color:rgba(255,255,255,.5);margin-top:1.5rem;font-style:italic;}
+  .founder-feature{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(2rem,5vw,3.5rem);align-items:center;max-width:1000px;margin:0 auto;}
+  .ff-photo{position:relative;aspect-ratio:4/5;border-radius:20px;overflow:hidden;background:linear-gradient(160deg,var(--turquoise),var(--marine));}
+  .ff-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+  .ff-name{font-size:clamp(1.9rem,3.8vw,2.7rem);color:#fff;margin:.5rem 0 1.1rem;}
+  .ff-body p{font-size:1rem;font-weight:300;color:rgba(255,255,255,.82);margin-bottom:1rem;}
+
+  /* story */
+  .story{background:var(--sand);color:var(--ink);}
+  .story-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,5vw,4rem);align-items:center;}
+  .story .eyebrow{color:var(--turquoise);}
+  .story h2{font-size:clamp(1.9rem,4vw,3rem);margin:1rem 0 1.2rem;}
+  .story p{font-size:1.03rem;font-weight:300;color:rgba(20,48,79,.85);margin-bottom:1rem;}
+  .story-img{border-radius:20px;overflow:hidden;aspect-ratio:4/3;background:linear-gradient(160deg,var(--turquoise),var(--marine));
+    background-image:linear-gradient(0deg,rgba(10,37,64,.15),rgba(10,37,64,.05)),url('https://commons.wikimedia.org/wiki/Special:FilePath/Forodhani_park_food_stand.jpg?width=1200');background-size:cover;background-position:center;}
+
+  /* values */
+  .values{background:var(--marine);}
+  .v-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem;margin-top:2.5rem;}
+  .v-item{border-top:2px solid var(--gold);padding-top:1.1rem;}
+  .v-item.alt{border-top-color:var(--sunset);}
+  .v-item h3{font-size:1.2rem;color:#fff;margin-bottom:.5rem;}
+  .v-item p{font-size:.9rem;font-weight:300;color:rgba(255,255,255,.72);}
+
+  /* cta */
+  .cta{background:linear-gradient(180deg,var(--marine-2),var(--marine));text-align:center;padding:clamp(4rem,9vh,7rem) 1rem;}
+  .cta h2{font-size:clamp(2rem,4.5vw,3.2rem);margin-bottom:1rem;}
+  .cta p{font-weight:300;opacity:.82;max-width:520px;margin:0 auto 2rem;}
+  .cta-row{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+
+  /* footer */
+  .footer{background:var(--marine);border-top:1px solid rgba(47,168,224,.16);padding:clamp(3rem,6vh,4.5rem) 0 0;}
+  .footer-cols{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:2.5rem;}
+  .footer-brand .brand{margin-bottom:1rem;}
+  .footer p{font-size:.92rem;font-weight:300;opacity:.78;max-width:320px;}
+  .footer h4{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:#fff;margin-bottom:1rem;font-family:var(--font-sans);font-weight:500;}
+  .footer ul{list-style:none;display:flex;flex-direction:column;gap:.6rem;font-size:.9rem;}
+  .footer ul a{opacity:.78;transition:color .3s,opacity .3s;}
+  .footer ul a:hover{color:var(--gold);opacity:1;}
+  .footer-bottom{margin-top:clamp(2.5rem,5vh,4rem);border-top:1px solid rgba(255,255,255,.1);padding:1.6rem 0;font-size:.82rem;color:rgba(243,248,252,.55);text-align:center;}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(30px);transition:opacity 1s var(--ease),transform 1s var(--ease);}
+  .reveal.in{opacity:1;transform:none;}
+  .reveal.d1{transition-delay:.12s;}.reveal.d2{transition-delay:.24s;}
+
+  /* cursor */
+  .cursor-dot,.cursor-ring{position:fixed;top:0;left:0;border-radius:50%;pointer-events:none;z-index:9999;mix-blend-mode:difference;}
+  .cursor-dot{width:7px;height:7px;background:#fff;}
+  .cursor-ring{width:38px;height:38px;border:1.5px solid rgba(255,255,255,.8);transition:width .3s var(--ease),height .3s var(--ease),border-color .3s;}
+  .cursor-ring.grow{width:62px;height:62px;border-color:var(--gold);}
+  body.has-cursor,body.has-cursor a,body.has-cursor button{cursor:none;}
+  @media (pointer:coarse){.cursor-dot,.cursor-ring{display:none;}}
+
+  /* responsive */
+  @media (max-width:900px){
+    .nav-links{position:fixed;inset:0;flex-direction:column;justify-content:center;gap:2rem;background:rgba(8,28,50,.97);backdrop-filter:blur(16px);font-size:1.3rem;transform:translateX(100%);transition:transform .5s var(--ease);}
+    body.menu-open .nav-links{transform:translateX(0);}
+    .burger{display:flex;}
+    .f-grid{grid-template-columns:1fr 1fr;}
+    .founder-feature{grid-template-columns:1fr;}
+    .story-grid{grid-template-columns:1fr;}
+    .story-img{order:-1;}
+    .v-grid{grid-template-columns:1fr 1fr;}
+    .footer-cols{grid-template-columns:1fr;gap:2rem;}
+  }
+  @media (max-width:560px){
+    .f-grid{grid-template-columns:1fr;}
+    .v-grid{grid-template-columns:1fr;}
+  }
+  @media (prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important;scroll-behavior:auto !important;}.reveal{opacity:1;transform:none;}}
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" id="nav">
+  <a href="everything-zanzibar.html" class="brand"><img class="brand-logo" src="1.jpg" alt="Everything Zanzibar logo" onerror="this.style.display='none'" /> <b>Everything</b> Zanzibar</a>
+  <div class="nav-links" id="navLinks">
+    <a href="everything-zanzibar.html">Home</a>
+    <a href="everything-zanzibar.html#explore">Island</a>
+    <a href="everything-zanzibar.html#events">Experiences</a>
+    <a href="everything-zanzibar-activities.html">Activities</a>
+    <a href="everything-zanzibar-blog.html">Journal</a>
+    <a class="active">Founders</a>
+    <a href="everything-zanzibar-booking.html" class="btn btn-gold">Plan Your Trip</a>
+  </div>
+  <button class="burger" id="burger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="hero-inner reveal in">
+    <span class="eyebrow">The Collective</span>
+    <h1>The person who hands you <em>the keys</em>.</h1>
+    <p>Everything Zanzibar isn't a faceless booking site — it's one islander on a mission, and a team who believe the most beautiful island on earth deserves to be experienced properly.</p>
+  </div>
+</header>
+
+<!-- ============ FOUNDER ============ -->
+<section class="section founders">
+  <div class="wrap">
+    <div class="sec-head reveal" style="margin-inline:auto;text-align:center;">
+      <span class="eyebrow">Meet the founder</span>
+      <h2>One islander. One obsession.</h2>
+      <p style="margin-inline:auto;">Everything Zanzibar began with a single belief — that the most beautiful island on earth deserves to be experienced properly. Here's the person who built it.</p>
+    </div>
+
+    <div class="founder-feature reveal">
+      <div class="ff-photo">
+        <span class="f-initials">TT</span>
+        <img src="founder-1.jpg" alt="Tareeq Twaha Swai, Founder &amp; CEO" loading="lazy" onerror="this.style.display='none'">
+      </div>
+      <div class="ff-body">
+        <div class="f-role">Founder &amp; CEO</div>
+        <h3 class="ff-name">Tareeq Twaha Swai</h3>
+        <p>Tareeq founded Everything Zanzibar to close the gap between the island visitors see and the island locals live — the unmarked beaches, the grandmother's kitchen, the dhow at golden hour.</p>
+        <p>Today he leads the vision across everything the brand touches: insider guides, ground festivals, luxury yacht sailings, partner hotels and door-to-door transfers — every experience held to one standard, every guest treated like a friend coming home.</p>
+        <div class="f-social"><a href="https://instagram.com/everythingzanzibar" target="_blank" rel="noopener">Instagram ↗</a> <a href="https://wa.me/255764317595" target="_blank" rel="noopener">WhatsApp ↗</a></div>
+        <p class="f-note">Add a portrait named <b>founder-1.jpg</b> to this folder (an 800×1000 portrait works best). Until then, his initials show.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STORY ============ -->
+<section class="section story">
+  <div class="wrap">
+    <div class="story-grid">
+      <div class="reveal">
+        <span class="eyebrow">Our story</span>
+        <h2>It started with a simple frustration.</h2>
+        <p>Friends kept arriving in Zanzibar and leaving having seen only the inside of a resort. They'd miss the grandmother's kitchen, the unmarked beach, the dhow at golden hour — the island we actually live in.</p>
+        <p>So we built the friend we wished every visitor had: part insider guide, part event host, part concierge. One local team that plans your whole trip — from the airport pickup to the last party on the water.</p>
+        <p>Today that's guides, festivals, luxury yacht sailings, partner hotels and door-to-door transfers — all under one roof, all run by people who call this island home.</p>
+      </div>
+      <div class="story-img reveal d1" role="img" aria-label="Forodhani night market, Stone Town"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VALUES ============ -->
+<section class="section values">
+  <div class="wrap">
+    <div class="sec-head reveal" style="margin-bottom:0;">
+      <span class="eyebrow">What we stand for</span>
+      <h2>Four promises we don't break.</h2>
+    </div>
+    <div class="v-grid">
+      <div class="v-item reveal"><h3>Local-first</h3><p>Owned and run by islanders. Your money supports the community that makes Zanzibar, Zanzibar.</p></div>
+      <div class="v-item alt reveal d1"><h3>Zero gatekeeping</h3><p>The real recommendations, not the sponsored ones. We tell you what we'd tell a friend.</p></div>
+      <div class="v-item reveal d1"><h3>End to end</h3><p>One team, one WhatsApp thread, your whole trip — from landing to take-off.</p></div>
+      <div class="v-item alt reveal d2"><h3>Premium, always</h3><p>Whether it's a street-food crawl or a private yacht, the standard never drops.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="cta">
+  <div class="wrap">
+    <span class="eyebrow">Karibu — welcome</span>
+    <h2>Let's plan your island, together.</h2>
+    <p>Tell us what you're dreaming of and a founder-trained local curator will build it with you, end to end.</p>
+    <div class="cta-row">
+      <a href="everything-zanzibar-booking.html" class="btn btn-fill" data-cursor>Plan your trip →</a>
+      <a href="https://wa.me/255764317595" target="_blank" rel="noopener" class="btn btn-gold" data-cursor>Chat on WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-cols">
+      <div class="footer-brand">
+        <a href="everything-zanzibar.html" class="brand"><img class="brand-logo" src="1.jpg" alt="Everything Zanzibar" onerror="this.style.display='none'" style="width:66px;height:66px;" /> <b>Everything</b> Zanzibar</a>
+        <p>Tourism · Events · Experiences. Plan your whole trip through us — and with us.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="everything-zanzibar.html">Home</a></li>
+          <li><a href="everything-zanzibar.html#explore">Island guide</a></li>
+          <li><a href="everything-zanzibar.html#events">Experiences</a></li>
+          <li><a href="everything-zanzibar-booking.html">Book a trip</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Reach us</h4>
+        <ul>
+          <li><a href="https://wa.me/255764317595" target="_blank" rel="noopener">WhatsApp: +255 764 317 595</a></li>
+          <li><a href="https://instagram.com/everythingzanzibar" target="_blank" rel="noopener">Instagram: @EverythingZanzibar</a></li>
+          <li><a href="https://www.tiktok.com/@everythingzanzibar" target="_blank" rel="noopener">TikTok: @everythingzanzibar</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">© <span id="year"></span> Everything Zanzibar · Made with salt air in Zanzibar</div>
+  </div>
+</footer>
+
+<div class="cursor-ring" id="cursorRing"></div>
+<div class="cursor-dot" id="cursorDot"></div>
+
+<script>
+(function(){
+  "use strict";
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  var nav = document.getElementById('nav');
+  window.addEventListener('scroll', function(){ nav.classList.toggle('scrolled', window.scrollY > 40); }, {passive:true});
+
+  document.getElementById('burger').addEventListener('click', function(){ document.body.classList.toggle('menu-open'); });
+  document.querySelectorAll('#navLinks a').forEach(function(a){ a.addEventListener('click', function(){ document.body.classList.remove('menu-open'); }); });
+
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:0.14});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+
+  var fine = window.matchMedia('(pointer:fine)').matches;
+  if(fine && !reduce){
+    document.body.classList.add('has-cursor');
+    var dot = document.getElementById('cursorDot'), ring = document.getElementById('cursorRing');
+    var mx = innerWidth/2, my = innerHeight/2, rx = mx, ry = my;
+    window.addEventListener('mousemove', function(ev){ mx = ev.clientX; my = ev.clientY; dot.style.transform = 'translate(' + mx + 'px,' + my + 'px) translate(-50%,-50%)'; });
+    (function loop(){ rx += (mx-rx)*0.16; ry += (my-ry)*0.16; ring.style.transform = 'translate(' + rx + 'px,' + ry + 'px) translate(-50%,-50%)'; requestAnimationFrame(loop); })();
+    document.addEventListener('mouseover', function(e){ if(e.target.closest('a,button,[data-cursor],.f-card')) ring.classList.add('grow'); });
+    document.addEventListener('mouseout', function(e){ if(e.target.closest('a,button,[data-cursor],.f-card')) ring.classList.remove('grow'); });
+  }
+})();
+</script>
+</body>
+</html>
